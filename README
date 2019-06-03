@@ -1,0 +1,24 @@
+Author: J. Jeffery Stager Jr.
+
+SIZED TYPES
+
+  This is a header library for 32-bit sized types in ANSI C. It allows for ANSI
+  versions of:
+
+    * int8_t
+    * int16_t
+    * int32_t
+    * uint8_t
+    * uint16_t
+    * uint32_t
+
+  It also includes the macros for using these data types with printf
+
+USAGE
+
+  Download this project and add it to your CMakeLists.txt with the following
+  line:
+
+    add_subdirectory("/path/to/sized_types")
+
+  After that, link it along with your other dependencies to your project
