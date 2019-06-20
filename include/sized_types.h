@@ -35,9 +35,9 @@
 #define PRIx32 "%x"
 #define PRIX32 "%X"
 
-#if CHAR_BITS != 8
+#if CHAR_BIT != 8
 
-#error "CHAR_BITS != 8"
+#error "CHAR_BIT != 8"
 
 #endif
 
