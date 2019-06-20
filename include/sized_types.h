@@ -35,6 +35,15 @@
 #define PRIx32 "%x"
 #define PRIX32 "%X"
 
+#if CHAR_BITS != 8
+
+#error "CHAR_BITS != 8"
+
+#endif
+
+typedef char int8_t;
+typedef unsigned char uint8_t;
+
 #if UINT_MAX == 0xffffU
 
 #define BIT_16_DEFINED
