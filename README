@@ -2,17 +2,18 @@ Author: J. Jeffery Stager Jr.
 
 SIZED TYPES
 
-  This is a header library for 32-bit sized types in ANSI C. It allows for ANSI
-  versions of:
+  This is a header library for 8-bit, 16-bit, and 32-bit sized types in ANSI C.
+  It provides the following types:
 
-    * int8_t
-    * int16_t
-    * int32_t
-    * uint8_t
-    * uint16_t
-    * uint32_t
+    * int8
+    * int16
+    * int32
+    * uint8
+    * uint16
+    * uint32
 
-  It also includes the macros for using these data types with printf
+  It also includes the same macros for using these data types with printf as
+  stdint.h provides (PRIu16, PRId32, etc...)
 
 USAGE
 

@@ -35,17 +35,33 @@
 #define PRIx32 "%x"
 #define PRIX32 "%X"
 
+#if CHAR_BIT != 8
+
+#error "char not 8 bits"
+
+#endif
+
+#define PRId8 "%d"
+#define PRIi8 "%d"
+#define PRIu8 "%u"
+#define PRIo8 "%o"
+#define PRIx8 "%x"
+#define PRIX8 "%X"
+
+typedef char int8;
+typedef unsigned char uint8;
+
 #if UINT_MAX == 0xffffU
 
 #define BIT_16_DEFINED
-typedef int int16_t;
-typedef unsigned int uint16_t;
+typedef int int16;
+typedef unsigned int uint16;
 
 #elif UINT_MAX == 0xffffffffUL
 
 #define BIT_32_DEFINED
-typedef int int32_t;
-typedef unsigned int uint32_t;
+typedef int int32;
+typedef unsigned int uint32;
 
 #else
 
@@ -56,8 +72,8 @@ typedef unsigned int uint32_t;
 /* check short */
 #ifndef BIT_16_DEFINED
 
-typedef short int16_t;
-typedef unsigned short uint16_t;
+typedef short int16;
+typedef unsigned short uint16;
 
 #endif
 
@@ -70,8 +86,8 @@ typedef unsigned short uint16_t;
 #define PRIo32 "%lo"
 #define PRIx32 "%lx"
 #define PRIX32 "%lX"
-typedef long int32_t;
-typedef unsigned long uint32_t;
+typedef long int32;
+typedef unsigned long uint32;
 
 #endif
 
