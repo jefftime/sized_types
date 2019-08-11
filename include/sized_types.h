@@ -19,21 +19,23 @@
 #ifndef SIZED_TYPES_H
 #define SIZED_TYPES_H
 
+#ifdef SIZED_TYPES_NO_STDINT_H
+
 #include <limits.h>
 
-#define PRId16 "%d"
-#define PRIi16 "%d"
-#define PRIu16 "%u"
-#define PRIo16 "%o"
-#define PRIx16 "%x"
-#define PRIX16 "%X"
+#define PRId16 "d"
+#define PRIi16 "d"
+#define PRIu16 "u"
+#define PRIo16 "o"
+#define PRIx16 "x"
+#define PRIX16 "X"
 
-#define PRId32 "%d"
-#define PRIi32 "%d"
-#define PRIu32 "%u"
-#define PRIo32 "%o"
-#define PRIx32 "%x"
-#define PRIX32 "%X"
+#define PRId32 "d"
+#define PRIi32 "d"
+#define PRIu32 "u"
+#define PRIo32 "o"
+#define PRIx32 "x"
+#define PRIX32 "X"
 
 #if CHAR_BIT != 8
 
@@ -48,20 +50,20 @@
 #define PRIx8 "%x"
 #define PRIX8 "%X"
 
-typedef char int8;
-typedef unsigned char uint8;
+typedef char int8_t;
+typedef unsigned char uint8_t;
 
 #if UINT_MAX == 0xffffU
 
 #define BIT_16_DEFINED
-typedef int int16;
-typedef unsigned int uint16;
+typedef int int16_t;
+typedef unsigned int uint16_t;
 
 #elif UINT_MAX == 0xffffffffUL
 
 #define BIT_32_DEFINED
-typedef int int32;
-typedef unsigned int uint32;
+typedef int int32_t;
+typedef unsigned int uint32_t;
 
 #else
 
@@ -72,26 +74,32 @@ typedef unsigned int uint32;
 /* check short */
 #ifndef BIT_16_DEFINED
 
-typedef short int16;
-typedef unsigned short uint16;
+typedef short int16_t;
+typedef unsigned short uint16_t;
 
 #endif
 
 /* check long */
 #ifndef BIT_32_DEFINED
 
-#define PRId32 "%ld"
-#define PRIi32 "%ld"
-#define PRIu32 "%lu"
-#define PRIo32 "%lo"
-#define PRIx32 "%lx"
-#define PRIX32 "%lX"
-typedef long int32;
-typedef unsigned long uint32;
+#define PRId32 "ld"
+#define PRIi32 "ld"
+#define PRIu32 "lu"
+#define PRIo32 "lo"
+#define PRIx32 "lx"
+#define PRIX32 "lX"
+typedef long int32_t;
+typedef unsigned long uint32_t;
 
 #endif
 
 #undef BIT_16_DEFINED
 #undef BIT_32_DEFINED
+
+#else
+
+#include <stdint.h>
+
+#endif /* SIZED_TYPES_NO_STDINT_H */
 
 #endif
