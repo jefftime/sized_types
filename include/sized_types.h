@@ -19,7 +19,13 @@
 #ifndef SIZED_TYPES_H
 #define SIZED_TYPES_H
 
-#ifdef SIZED_TYPES_NO_STDINT_H
+
+#ifndef SIZED_TYPES_NO_STDINT_H
+
+#include <stdint.h>
+#include <inttypes.h>
+
+#else
 
 #include <limits.h>
 
@@ -95,10 +101,6 @@ typedef unsigned long uint32_t;
 
 #undef BIT_16_DEFINED
 #undef BIT_32_DEFINED
-
-#else
-
-#include <stdint.h>
 
 #endif /* SIZED_TYPES_NO_STDINT_H */
 
